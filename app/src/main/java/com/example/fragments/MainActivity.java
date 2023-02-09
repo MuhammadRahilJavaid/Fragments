@@ -17,21 +17,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnTwo = findViewById(R.id.buttonFragmentTwo);
         btnOne = findViewById(R.id.buttonFragmentOne);
-        btnThree = findViewById(R.id.buttonFragmentThree);
         //linearLayout = findViewById(R.id.layoutMainActivity);
         btnOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                FragmentOne fragmentOne = new FragmentOne();
-//                FragmentTransaction transaction =getSupportFragmentManager().beginTransaction();
-//                transaction.replace(R.id.layoutMainActivity, fragmentOne);
-//                transaction.commit();
-                ITAfternoonFragment fragmentOne = new ITAfternoonFragment();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                FragmentOne fragmentOne = new FragmentOne();
+                FragmentTransaction transaction =getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.layoutMainActivity, fragmentOne);
                 transaction.commit();
+                ITAfternoonFragment fragmentTwo = new ITAfternoonFragment();
+                FragmentTransaction transactionTwo = getSupportFragmentManager().beginTransaction();
+                transactionTwo.replace(R.id.layoutMainActivity, fragmentTwo);
+                transactionTwo.commit();
             }
         });
     }
